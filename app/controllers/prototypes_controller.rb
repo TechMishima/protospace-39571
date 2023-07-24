@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :edit]
+  before_action :move_to_login, except: [:index, :show]
+  before_action :check_name, only: [:edit]
 
   def index
     @prototype = Prototype.includes(:user)
